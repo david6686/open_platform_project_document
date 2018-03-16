@@ -1,10 +1,8 @@
 (TeX-add-style-hook
- "document"
+ "test"
  (lambda ()
-   (setq TeX-command-extra-options
-         "-shell-escape")
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("article" "UTF8" "12pt" "a4paper")))
+                     '(("article" "12pt" "a4paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("xeCJK" "slantfont" "boldfont")))
    (TeX-run-style-hooks
