@@ -1,6 +1,7 @@
 compile_pdf:
   image: moss/xelatex
   script:
+    - tlmgr install xecjk
     - xelatex document.tex
     
   artifacts:
