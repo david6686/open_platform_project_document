@@ -1,0 +1,7 @@
+compile_pdf:
+  image: aergus/latex
+  script:
+    - latexmk -pdf intro.tex
+  artifacts:
+    paths:
+      - intro.pdf
