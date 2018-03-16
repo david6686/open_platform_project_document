@@ -1,7 +1,7 @@
 compile_pdf:
   image: moss/xelatex
   script:
-    - XeTeX -pdf document.tex
+    - xetex -pdf document.tex
     
   artifacts:
     paths:
