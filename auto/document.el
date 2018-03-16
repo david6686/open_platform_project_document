@@ -6,6 +6,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "article"
-    "art10"))
+    "art10"
+    "fontspec"))
  :latex)
 
