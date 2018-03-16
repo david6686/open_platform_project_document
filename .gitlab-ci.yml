@@ -1,7 +1,7 @@
 compile_pdf:
   image: aergus/latex
   script:
-    - XeLaTeX -pdf document.tex
+    - XeTeX -pdf document.tex
     
   artifacts:
     paths:
