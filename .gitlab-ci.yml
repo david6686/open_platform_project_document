@@ -1,5 +1,5 @@
 compile_pdf:
-  image: aergus/latex
+  image: moss/xelatex
   script:
     - XeTeX -pdf document.tex
     
