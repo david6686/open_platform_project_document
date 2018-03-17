@@ -1,10 +1,12 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.3.16)  17 MAR 2018 01:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.3.16)  17 MAR 2018 16:13
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input document.tex
-(./document.tex
+**/Users/user/Desktop/open_platform_project/document
+(/Users/user/Desktop/open_platform_project/document.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 22 language(s) loaded.
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/base/size12.clo
@@ -899,24 +901,25 @@ File: xeCJK.cfg 2017/05/15 v3.4.8 Configuration file for xeCJK package
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
-* Font 'Kai' does not contain script 'CJK'.
+* Font 'STSongti-TC-Regular' does not contain script 'CJK'.
 *************************************************
-\g__fontspec_family_Kai_int=\count144
+\g__fontspec_family_STSongti-TC-Regular_int=\count144
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'Kai(0)' created for font 'Kai' with options
-. [Script={CJK},AutoFakeBold={4},AutoFakeSlant={0.167}].
+. Font family 'STSongti-TC-Regular(0)' created for font 'STSongti-TC-Regular'
+. with options [Script={CJK},AutoFakeBold={4},AutoFakeSlant={0.167}].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
-. - 'normal' (m/n) with NFSS spec.: <->"Kai/OT"
+. - 'normal' (m/n) with NFSS spec.: <->"STSongti-TC-Regular/OT"
 . - 'small caps'  (m/sc) with NFSS spec.: 
-. - 'bold' (bx/n) with NFSS spec.: <->"Kai/OT:embolden=4;"
+. - 'bold' (bx/n) with NFSS spec.: <->"STSongti-TC-Regular/OT:embolden=4;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
-. - 'italic' (m/it) with NFSS spec.: <->"Kai/OT:slant=0.167;"
+. - 'italic' (m/it) with NFSS spec.: <->"STSongti-TC-Regular/OT:slant=0.167;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.: 
-. - 'bold italic' (bx/it) with NFSS spec.: <->"Kai/OT:embolden=4;slant=0.167;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->"STSongti-TC-Regular/OT:embolden=4;slant=0.167;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
 .................................................
@@ -1103,12 +1106,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 17022 strings out of 494511
- 346373 string characters out of 6166320
- 380824 words of memory out of 5000000
- 20832 multiletter control sequences out of 15000+600000
+ 17039 strings out of 494511
+ 348017 string characters out of 6166320
+ 380952 words of memory out of 5000000
+ 20848 multiletter control sequences out of 15000+600000
  4769 words of font info for 44 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 42i,6n,71p,10432b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,6n,71p,10463b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on document.pdf (1 page).
+e).
