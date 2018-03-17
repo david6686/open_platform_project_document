@@ -1,7 +1,8 @@
 compile_pdf:
   image: moss/xelatex
   script:
-    - sudo tlmgr install xecjk
+    - apt-get update -y
+    - apt-get install latex-cjk-all -y
     - xelatex document.tex
     
   artifacts:
