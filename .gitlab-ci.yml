@@ -3,7 +3,8 @@ compile_pdf:
   script:
     - apt-get update -y
     - apt-get install latex-cjk-all -y
-    - xelatex document.tex
+    - xetex document.tex
+    # - xelatex document.tex
     
   artifacts:
     paths:
