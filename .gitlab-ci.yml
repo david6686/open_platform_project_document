@@ -1,9 +1,11 @@
 compile_pdf:
-  image: pluswave/ctex
-#   image: moss/xelatex 
+#   image: pluswave/ctex
+  image: moss/xelatex 
   script:
     - apt-get update -y
-    - apt-get install latex-cjk-all -y
+    - apt-get -y install latex-cjk-all
+    - apt-get -y install texlive-xetex
+    - apt-get -y install texlive-lang-chinese
     # - xetex document.tex
     - xelatex document.tex
     
