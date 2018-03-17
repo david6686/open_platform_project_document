@@ -1,10 +1,11 @@
 compile_pdf:
-  image: moss/xelatex
+  image: pluswave/ctex
+#   image: moss/xelatex 
   script:
     - apt-get update -y
     - apt-get install latex-cjk-all -y
-    # - xetex document.tex
-    - xelatex document.tex
+    - xetex document.tex
+    # - xelatex document.tex
     
   artifacts:
     paths:
