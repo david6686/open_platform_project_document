@@ -76,4 +76,10 @@
 7. 使用visual studio開啟.tex 右鍵選擇`build latex project`
 8. 應該就會有可愛的pdf出現了  大概
 
+------------------
+
+
+## 編譯器勢力圖（舊）
+![Alt hahaha](https://github.com/emacs-tw/emacs-101-beginner-survival-guide/raw/master/pic/alliances_zh.png)  
+
 
