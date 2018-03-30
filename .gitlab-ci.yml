@@ -1,6 +1,7 @@
 compile_pdf:
 #   image: pluswave/ctex
-  image: moss/xelatex 
+#   image: moss/xelatex 
+    image: miktex/miktex
   script:
     - apt-get update -y
     - apt-get -y install latex-cjk-all
