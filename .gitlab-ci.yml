@@ -1,15 +1,24 @@
+# compile_pdf:
+# #   image: pluswave/ctex
+# #   image: moss/xelatex 
+#     image: moss/xelatex
+#   script:
+#     - apt-get update -y
+#     - apt-get -y install latex-cjk-all
+#     - apt-get -y install texlive-xetex
+#     - apt-get -y install texlive-lang-chinese
+#     # - xetex document.tex
+#     - xelatex document.tex
+    
+#   artifacts:
+#     paths:
+#       - document.pdf
 compile_pdf:
-#   image: pluswave/ctex
-#   image: moss/xelatex 
-    image: moss/xelatex
+  image: miktex/miktex
   script:
-    - apt-get update -y
-    - apt-get -y install latex-cjk-all
-    - apt-get -y install texlive-xetex
-    - apt-get -y install texlive-lang-chinese
-    # - xetex document.tex
+    # - xetex -pdf document.tex
     - xelatex document.tex
     
   artifacts:
     paths:
-      - document.pdf
+        - document.pdf
