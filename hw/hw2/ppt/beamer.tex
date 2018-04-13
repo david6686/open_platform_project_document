@@ -223,33 +223,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 %------------------------------------------------
 \section{Second Section}
 %------------------------------------------------
-
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{Other Requirements}
+\begin{block}{Appendix A: Glossary}
+Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.
+\end{block}
+
+\begin{block}{Appendix B: Analysis Models}
+Optionally, include any pertinent analysis models, such as data  flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
+\end{block}
+
+\begin{block}{Appendix C: To Be Determined List}
+Collect a numbered list of the TBD (to be determined) references that remain in the SRS so they can be tracked to closure.
+\end{block}
+\end{frame}
+%------------------------------------------------
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Citation}
+An example of the \verb|\cite| command to cite within the presentation:\\~
+
+This statement requires citation \cite{p1}.
+
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
+%----------------------------------------------------------------------------------------
 
 \begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
 \frametitle{Verbatim}
