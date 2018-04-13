@@ -1,3 +1,4 @@
-\beamer@sectionintoc {1}{First Section}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Subsection Example}{3}{0}{1}
-\beamer@sectionintoc {2}{Second Section}{8}{0}{2}
+\beamer@sectionintoc {1}{FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}{3}{0}{1}
+\beamer@sectionintoc {2}{SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Table}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Theorem}{11}{0}{2}
