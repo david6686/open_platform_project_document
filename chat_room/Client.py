@@ -7,12 +7,15 @@ username_ = None
 class Client:
     def __init__(self, host, port, nickname):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock = sock
-        self.sock.connect((host, port))
-        self.sock.send(b'1')   #byte方式 傳送  送key 假設是1
 
         self.username = nickname
         self.talkinfo = {"username":self.username}
+
+        self.sock = sock
+        self.sock.connect((host, port))
+        self.sock.send(b'1')   #byte方式 傳送  送key 假設是1
+        
+        
 
     def sendThreadFunc(self):
         while True:
