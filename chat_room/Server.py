@@ -28,11 +28,6 @@ class Server:
     #確認註冊過的使用者，看要不要接收他
     def checkConnection(self):
         connection, addr = self.sock.accept()
-<<<<<<< HEAD
-        
-=======
-        #現在有新的連線進來
->>>>>>> fcdb39b33435e4c22ca674e008ad5bd6b57e1ad8
         print('Accept a new connection', connection.getsockname(), connection.fileno())
 
         try:

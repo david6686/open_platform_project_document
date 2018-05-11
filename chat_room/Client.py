@@ -2,6 +2,7 @@ import socket
 import threading
 import json
 
+
 username_ = None
 
 class Client:
@@ -13,10 +14,9 @@ class Client:
 
         self.username = nickname
         self.talkinfo = {"username":self.username}
-        tt = self.talkinfo
-        tt["command"] = "join"
-        self.sock.send(json.dumps(tt).encode())
-
+        self.talkinfo["command"] = "join"
+        self.sock.send(json.dumps(self.talkinfo).encode())
+        self.talkinfo.pop("command")
 
     def sendThreadFunc(self):
         while True:
@@ -33,7 +33,8 @@ class Client:
         while True:
             try:
                 otherword = self.sock.recv(1024) # socket.recv(recv_size)    ＃去接收  1024是接收的長度
-                print(otherword.decode())
+                print("\r"+otherword.decode())
+                print("\n"+self.username+":    ", end="")
             except ConnectionAbortedError:
                 print('Server closed this connection!')
 
