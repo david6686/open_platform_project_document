@@ -38,14 +38,9 @@ class Client:
                 print('Server is closed!')
 
 def main():
-<<<<<<< HEAD
     print("Welcome to Chatroom!")
     username_ = input("Input your nickname")
     c = Client('140.138.224.111', 5550, username_)
-=======
-    c = Client('localhost', 5550)    #new Client    addr,port number  要看誰當server喔
-    #  切兩個thread  兩個同時跑  不斷的收與送
->>>>>>> fcdb39b33435e4c22ca674e008ad5bd6b57e1ad8
     th1 = threading.Thread(target=c.sendThreadFunc)
     th2 = threading.Thread(target=c.recvThreadFunc)
     threads = [th1, th2]
