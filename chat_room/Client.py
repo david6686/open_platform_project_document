@@ -16,14 +16,23 @@ class Client:
         self.talkinfo = {"username":self.username}
         self.talkinfo["command"] = "join"
         self.sock.send(json.dumps(self.talkinfo).encode())
-        self.talkinfo.pop("command")
+        self.talkinfo["command"] = ""
 
     def sendThreadFunc(self):
         while True:
             try:
                 myword = input(self.username+":    ")
-                self.talkinfo["message"] = myword
-                self.sock.send(json.dumps(self.talkinfo).encode())
+
+                if myword == "\list":
+                    self.talkinfo["message"] = myword
+                    self.talkinfo["command"] = "list"
+                    self.sock.send(json.dumps(self.talkinfo).encode())
+                else:
+                    self.talkinfo["message"] = myword
+                    self.talkinfo["command"] = "message"
+                    self.sock.send(json.dumps(self.talkinfo).encode())
+                
+                self.talkinfo["command"] = ""
             except ConnectionAbortedError:
                 print('Server closed this connection!')
             except ConnectionResetError:
