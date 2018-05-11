@@ -13,8 +13,8 @@ from time import gmtime, strftime, localtime
 # DONE: 取完暱稱，歡迎 某某人訊息（歡迎進入者）
 # DONE: 聊天室系統公告: 有誰進入了聊天室
 # DONE: 誰發話在什麼時間 （可以用server的時間）
-# TODO: （加分題）聊天室公告：某人離開了聊天室
-# TODO: （加分題）聊天室人數現況
+# DONE: （加分題）聊天室公告：某人離開了聊天室
+# DONE: （加分題）聊天室人數現況
 
 class Server:
     def __init__(self, host, port):
@@ -25,6 +25,7 @@ class Server:
         self.sock.listen(5)    #listen   可以包含五個連線？
         print('Server', socket.gethostbyname(host), 'listening ...')    #做完上面，會說在哪個ip做listen
         self.mylist = list()
+        self.map_username = []
 
     # 確認註冊過的使用者，看要不要接收他
     def checkConnection(self):
@@ -78,7 +79,7 @@ class Server:
         system_message_template = {
             'join': 'SYSTEM: 歡迎 {username} 加入聊天室 {time}',
             'exit': 'SYSTEM: {username} 離開了我們 QQAQQ 普天同慶XDD   {time}',
-            '\list': 'SYSTEM: 目前有 {member_number} 人在線上'
+            'list': 'SYSTEM: 目前有 {member_number} 人在線上'
         }
         while True:
             #不斷接收新的訊息，並送出訊息
@@ -91,9 +92,15 @@ class Server:
                     if data['command'] == 'message':
                         self.tellOthers(connNumber, message_template.format(**data))
 
-                    elif data['command'] == '\list':
+                    elif data['command'] == 'list':
                         data['member_number'] = len(self.mylist)
                         self.tellUser(connNumber, system_message_template[data['command']].format(**data))
+
+                    elif data['command'] == 'join':
+                        self.map_username.append({  'socket_id': connNumber,
+                                                    'username': data['username']
+                                                  })
+                        self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
 
                     else:
                         self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
@@ -101,9 +108,18 @@ class Server:
                 else:
                     pass
 
-            except (OSError, ConnectionResetError):
+            # except (OSError, ConnectionResetError):
+            except:
                 #下線就要從list移除並關掉connect
                 try:
+                    data = {}
+                    data['time'] = self.getTime()
+                    data['command'] = 'exit'
+                    for i in self.map_username:
+                        if i['socket_id'] == connNumber:
+                            data['username'] = i['username']
+                            self.map_username.remove(i)
+                    self.tellOthers(connNumber, system_message_template['exit'].format(**data))
                     self.mylist.remove(myconnection)
 
                 except:
