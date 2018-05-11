@@ -1,18 +1,29 @@
 import socket
 import threading
+import json
+
+username_ = None
 
 class Client:
-    def __init__(self, host, port):
+    def __init__(self, host, port, nickname):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock = sock
         self.sock.connect((host, port))
         self.sock.send(b'1')   #byte方式 傳送  送key 假設是1
 
+        self.username = nickname
+        self.talkinfo = {"username":self.username}
+        tt = self.talkinfo
+        tt["command"] = "join"
+        self.sock.send(json.dumps(tt).encode())
+
+
     def sendThreadFunc(self):
         while True:
             try:
-                myword = input()     #不斷的等待接收使用者的輸入
-                self.sock.send(myword.encode())    # 一樣encode起來送出去
+                myword = input(self.username+":    ")
+                self.talkinfo["message"] = myword
+                self.sock.send(json.dumps(self.talkinfo).encode())
             except ConnectionAbortedError:
                 print('Server closed this connection!')
             except ConnectionResetError:
@@ -30,8 +41,9 @@ class Client:
                 print('Server is closed!')
 
 def main():
-    c = Client('localhost', 5550)    #new Client    addr,port number  要看誰當server喔
-    #  切兩個thread  兩個同時跑  不斷的收與送
+    print("Welcome to Chatroom!")
+    username_ = input("Input your nickname :")
+    c = Client('140.138.224.111', 5550, username_)
     th1 = threading.Thread(target=c.sendThreadFunc)
     th2 = threading.Thread(target=c.recvThreadFunc)
     threads = [th1, th2]
