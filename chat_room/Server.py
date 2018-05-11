@@ -7,6 +7,14 @@ import threading
 from time import gmtime, strftime
 
 
+# TODO: 歡迎進入聊天室訊息（給進入者）
+# TODO: 取暱稱
+# TODO: 取完暱稱，歡迎 某某人訊息（歡迎進入者）
+# TODO: 聊天室系統公告: 有誰進入了聊天室
+# TODO: 誰發話在什麼時間 （可以用server的時間）
+# TODO: （加分題）聊天室公告：某人離開了聊天室
+# TODO: （加分題）聊天室人數現況
+
 class Server:
     def __init__(self, host, port):
         # new一個socket
