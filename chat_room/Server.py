@@ -15,6 +15,7 @@ class Server:
 
     def checkConnection(self):
         connection, addr = self.sock.accept()
+        
         print('Accept a new connection', connection.getsockname(), connection.fileno())
 
         try:
@@ -52,6 +53,7 @@ class Server:
 
             except (OSError, ConnectionResetError):
                 try:
+                    print(myconnection, "BYEBYE")
                     self.mylist.remove(myconnection)
                 except:
                     pass
