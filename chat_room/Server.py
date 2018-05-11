@@ -60,6 +60,14 @@ class Server:
                 except:
                     pass
 
+    def tellUser(self, exceptNum, whatToSay):
+        for c in self.mylist:
+            if c.fileno() == exceptNum:
+                try:
+                    c.send(whatToSay.encode())
+                except:
+                    pass
+
     def getTime(self) -> str:
         return strftime('%H:%M:%S', localtime())
 
@@ -78,14 +86,18 @@ class Server:
                 recvedMsg = myconnection.recv(1024).decode()
                 data = json.loads(recvedMsg)
                 data['time'] = self.getTime()
+
                 if 'command' in data:
-                    if data['command'] == '\list':
+                    if data['command'] == 'message':
+                        self.tellOthers(connNumber, message_template.format(**data))
+
+                    elif data['command'] == '\list':
                         data['member_number'] = len(self.mylist)
-                        self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
+                        self.tellUser(connNumber, system_message_template[data['command']].format(**data))
+
                     else:
                         self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
-                elif recvedMsg:
-                    self.tellOthers(connNumber, message_template.format(**data))
+
                 else:
                     pass
 
