@@ -77,6 +77,7 @@ class Server:
         self.mylist.append(myconnection)
         message_template = '{username}: {message}    {time}'
         system_message_template = {
+            'welcome': '歡迎 {username} 加入幻想鄉XDD',
             'join': 'SYSTEM: 歡迎 {username} 加入聊天室 {time}',
             'exit': 'SYSTEM: {username} 離開了我們 QQAQQ 普天同慶XDD   {time}',
             'list': 'SYSTEM: 目前有 {member_number} 人在線上'
@@ -100,7 +101,11 @@ class Server:
                         self.map_username.append({  'socket_id': connNumber,
                                                     'username': data['username']
                                                   })
+
                         self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
+
+                        data['command'] = 'welcome'
+                        self.tellUser(connNumber, system_message_template[data['command']].format(**data))
 
                     else:
                         self.tellOthers(connNumber, system_message_template[data['command']].format(**data))
